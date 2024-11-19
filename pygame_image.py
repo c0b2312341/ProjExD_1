@@ -17,7 +17,11 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        screen.blit(bg_img, [-(tmr % 800), 0])
+        x = -(tmr % 3200)
+        bg2_img=pg.transform.flip(bg_img, True, False)#ex7
+        screen.blit(bg_img, [x, 0])#ex6, ex7:xで計算を代替
+        screen.blit(bg2_img, [x + 1600 , 0])#ex7
+        screen.blit(bg_img, [x + 3200, 0])#ex7
         screen.blit(koukaton_img, [300, 200])
         pg.display.update()
         tmr += 1        
