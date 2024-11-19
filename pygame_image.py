@@ -32,6 +32,8 @@ def main():
             koukaton_rect.move_ip(1, 0)
         elif key_lst[pg.K_LEFT]:
             koukaton_rect.move_ip(-1, 0)
+        else:
+            koukaton_rect.move_ip(-1, 0) #演習1:elseに左向きの移動
         x = -(tmr % 3200)
         bg2_img=pg.transform.flip(bg_img, True, False)#ex7
         screen.blit(bg_img, [x, 0])#ex6, ex7:xで計算を代替
